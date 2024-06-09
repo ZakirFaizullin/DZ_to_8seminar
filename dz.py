@@ -63,8 +63,14 @@ def standart_write(file_name, res):
 
 
 def copy_data(file_name, file_name_1):
+    search = int(input('Введите номер строки для копирования: '))
     res = read_file(file_name)
-    standart_write(file_name_1, res)
+    a = []
+    if search <= len(res):
+        a.append(res.pop(search - 1))
+        standart_write(file_name_1, a)
+    else:
+        print('Введен неверный номер строки')
 
 
 file_name = 'phone.csv'
